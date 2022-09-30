@@ -1,0 +1,19 @@
+<apex:page standardController="Invoice_Creation__c" recordSetVar="Invoices"   showHeader="false" sidebar="false" > 
+    <apex:pageBlock title="Invoices" >        
+        <apex:pageBlockTable value="{!invoices}" var="eachInvoice">
+            <apex:column headerValue="Invoice Number" >
+                <apex:outputLink value="/{!eachInvoice.id}" target="_blank" >
+                    {!eachInvoice.Name}
+                </apex:outputLink>
+            </apex:column>            
+            <apex:column value="{! eachInvoice.Amount_Due__c }"/>
+            <apex:column value="{! eachInvoice.Amount_Paid__c }" />
+            <apex:column value="{! eachInvoice.Days_Overdue__c }" />
+            <apex:column value="{! eachInvoice.Due_Date__c }" />
+            <apex:column value="{! eachInvoice.Invoice_Date__c }" />
+            <apex:column value="{! eachInvoice.Account_Name__c }" />
+            <apex:column value="{! eachInvoice.Status__c }" />
+            <apex:column value="{! eachInvoice.Total__c }" />              
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+</apex:page>
